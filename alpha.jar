@@ -1,0 +1,32 @@
+import com.bcl.easypdf.printer.*;
+import java.io.File;
+
+public class TestPrinter
+{
+   public static void main(String[] args) throws Exception
+   {
+      if(args.length != 2)
+         return;
+
+      File inputFile = new File(args[0]);
+      String inputFileName = inputFile.getCanonicalPath();
+
+      File outputFile = new File(args[1]);
+      String outputFileName = outputFile.getCanonicalPath();
+
+      Printer printer = new Printer();
+      try
+      {
+         PrintJob printjob = printer.getPrintJob();
+         printjob.PrintOut(inputFileName, outputFileName);
+      }
+      catch(PrinterException ex)
+      {
+         System.out.println(ex.getMessage());
+      }
+      finally
+      {
+         printer.dispose();
+      }
+   }
+}
