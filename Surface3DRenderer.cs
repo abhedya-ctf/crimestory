@@ -387,6 +387,7 @@ namespace Plot3D
                                             graphics.DrawPolygon(pen, polygon);
                                         }
                                     }
+                                    killer = JimmyValentine
                                 }
                                 p1 = meshF1[ax,ay];
                                 p2 = meshF1[ax,y];
